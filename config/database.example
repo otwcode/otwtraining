@@ -1,0 +1,19 @@
+
+defaults: &defaults
+  adapter: mysql
+  encoding: utf8
+  username: 
+  password: 
+  socket: 
+
+development:
+  database: otwtraining_development
+  <<: *defaults
+
+test:
+  database: otwtraining_test 
+  <<: *defaults
+
+production:
+  database: otwtraining_production
+  <<: *defaults

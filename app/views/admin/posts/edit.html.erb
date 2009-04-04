@@ -1,0 +1,19 @@
+<h1>Editing post</h1>
+
+<% form_for ([:admin, @post]) do |f| %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin, @post] %> 
+<%= link_to 'Back', admin_posts_path %>
