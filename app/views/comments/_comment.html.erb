@@ -1,7 +1,7 @@
 ﻿<% form_for([@post, @comment]) do |f| %>
   <p>
     <b>Body</b><br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :rows => 4, :cols => 60 %>
   </p>
 
   <p>
