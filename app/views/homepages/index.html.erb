@@ -1,0 +1,19 @@
+<h1>Awesome homepage!</h1>
+
+<p>
+  <b>Title:</b>
+  <%=h @post.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @post.body %>
+</p>
+
+<p>
+<%= link_to 'Posts', posts_path %>
+</p>
+
+<p>
+<%= link_to 'Admin posts', admin_posts_path %>
+</p>
