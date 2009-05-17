@@ -1,9 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :homepages
+
  map.namespace :admin do |admin|
   admin.resources :posts
  end
 
- map.root :controller => 'posts'
+ map.root :controller => 'homepages', :action => 'index'
  map.resources :posts, :has_many => :comments
 
 
