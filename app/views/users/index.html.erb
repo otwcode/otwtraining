@@ -1,0 +1,24 @@
+<h1>Listing of Users</h1>
+
+<table>
+  <tr>
+    <th>Users</th>
+    <th>User_id</th>
+  </tr>
+
+<% for user in @users %>
+  <tr>
+  <td><%=h user.login %></td>
+  <td><%=h user.id %></td>
+  <td><%= link_to 'Posts', user_posts_path(user) %></td>
+  <%end%>
+</tr>
+</table>
+<%= link_to 'New Post', new_post_path %>
+<p>
+<%= will_paginate @posts %>
+</p>
+<br />
+
+<%= link_to 'New User', signup_path %> | 
+<%= link_to 'Back', homepages_path %>

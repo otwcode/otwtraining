@@ -25,5 +25,5 @@
 <%= link_to 'Comments', post_comments_path(@post) %>
 
 
-
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit', [:edit, @user, @post] %>
+<%= link_to 'Back', user_posts_path(@user) %>
