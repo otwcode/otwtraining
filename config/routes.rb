@@ -1,17 +1,12 @@
- ActionController::Routing::Routes.draw do |map|
-  map.resource :session
+ActionController::Routing::Routes.draw do |map|
+ map.namespace :admin do |admin|
+  admin.resources :posts
+ end
 
-  map.resources :homepages
-
- map.root :controller => 'homepages', :action => 'index'
- map.resources :users, :has_many => :posts
+ map.root :controller => 'posts'
  map.resources :posts, :has_many => :comments
- 
- map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
- map.signup '/signup', :controller => 'users', :action => 'new'
- map.login '/login', :controller => 'sessions', :action => 'new'
- map.logout '/logout', :controller => 'sessions', :action => 'destroy'
- 
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,8 +1,6 @@
-<h1>Editing post in admin</h1>
+<h1>Editing post</h1>
 
-<%= error_messages_for :post %>
-
-<% form_for ([@user, @post]) do |f| %>
+<% form_for ([:admin, @post]) do |f| %>
 
   <p>
     <%= f.label :title %><br />
@@ -17,5 +15,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', [@user, @post] %> 
-<%= link_to 'Back', user_posts_path(@user) %>
+<%= link_to 'Show', [:admin, @post] %> 
+<%= link_to 'Back', admin_posts_path %>

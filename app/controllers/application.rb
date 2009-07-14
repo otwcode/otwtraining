@@ -3,9 +3,6 @@
 
 class ApplicationController < ActionController::Base
 
-  include AuthenticatedSystem
-  
-  
   helper :all # include all helpers, all the time
 
   # See ActionController::RequestForgeryProtection for details
