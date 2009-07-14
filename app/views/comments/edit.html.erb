@@ -1,10 +1,12 @@
 <h1>Editing comment</h1>
 
-<% form_for([@comment, @post]) do |f| %>
+<% form_for([@post, @comment]) do |f| %>
   <%= error_messages_for :comment %>
 
   <%= render :partial => @comment, 
   :locals => { :button_name => "Update"} %>
+  
+  <% end %>
 
 
 <%= link_to 'Show', [@post, @comment] %> |
