@@ -1,0 +1,38 @@
+﻿html  {
+ margin: 0px;
+ padding: 0px;
+}
+
+body  {
+ background-color: #33ccff;
+ 
+ }
+ 
+ h1  {
+  font-size: 2em;
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  padding-bottom: 1em;
+  border-bottom: 3px solid blue;
+  
+  }
+ 
+
+  td, th {
+   
+   padding-left: 12em;
+   
+  }
+  
+  .pagination   {
+  text-align: center;
+  padding: 2em
+  }
+  
+  h3  {
+   font-variant: small-caps;
+   margin-top: 3em;
+   }
+ 
