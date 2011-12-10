@@ -1,4 +1,9 @@
 class PostsController < ApplicationController
+
+  def home
+    @randomPost = Post.find(:first, :offset => rand(Post.all.size-1))
+  end
+
   # GET /posts
   # GET /posts.xml
   def index
