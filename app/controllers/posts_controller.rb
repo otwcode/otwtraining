@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
 
-  def home
-    @randomPost = Post.find(:first, :offset => rand(Post.all.size-1))
-  end
-
   # GET /posts
   # GET /posts.xml
+  def home
+	if Post.count > 0
+		@randomPost = Post.offset(rand(Post.count)).first
+	end
+  end
+
+  # GET /posts/index
+  # GET /posts/index.xml
   def index
     @posts = Post.all
 
@@ -26,8 +30,8 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.xml
+  # GET /admin/posts/new
+  # GET /admin/posts/new.xml
   def new
     @post = Post.new
 
@@ -42,8 +46,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  # POST /posts
-  # POST /posts.xml
+  # POST /posts/index
+  # POST /posts/index.xml
   def create
     @post = Post.new(params[:post])
 

@@ -18,12 +18,11 @@
         
     <p><%= link_to "Posts index", posts_path %></p>
     <p><%= link_to "New post", new_post_path %></p>
-
-
-    <h3><em>featured post:</em> <%= @randomPost.title %></h3>
-    <%= @randomPost.body %></p>
-
-    
+	
+	<% if @randomPost %>	
+		<h3><em>featured post:</em> <%= @randomPost.title %></h3>
+		<%= @randomPost.body %></p>
+	<% end %>    
         
       </div>
       
