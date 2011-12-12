@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= yield :head %>
+  <%= stylesheet_link_tag "posts" %>
+  <%= javascript_include_tag "jquery-1.5.min.js", "jquery.rails.js" %>
+  <%= csrf_meta_tag %>
+</head>
+
+<body>
+
+<div id="content_wrapper">
+
+<div id=navigation>
+    <%= yield :navigation %>
+</div>
+
+<%= yield %>
+
+</div>
+
+</body>
+</html>

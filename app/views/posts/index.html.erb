@@ -2,30 +2,35 @@
   <title>Index</title>
 <% end %>
 
+<% content_for :navigation do %>
+  <%= link_to 'Homepage', "/posts" %> |
+  <%= link_to 'New post', new_post_path %>
+<% end %>
+
 <h1>Listing posts</h1>
 
-<%= link_to 'homepage', "/posts" %>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id=all_posts>
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div id=whole_post>
+  
+    <div id=post_title>
+      <%= post.title %>
+    </div>
+    
+    <div id=post_body>
+      <%= post.body %>
+    </div>
+    
+    <div id=post_actions>    
+      <%= link_to 'Show', post %> | 
+      <%= link_to 'Edit', edit_post_path(post) %> |
+      <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+  </div>
+  
+  <hr>
+    
 <% end %>
-</table>
+</div>
 
 <br />
-
-<%= link_to 'New Post', new_post_path %>

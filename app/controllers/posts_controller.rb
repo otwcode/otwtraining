@@ -3,9 +3,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def home
-	if Post.count > 0
-		@randomPost = Post.offset(rand(Post.count)).first
-	end
+    if Post.count > 0
+      @randomPost = Post.offset(rand(Post.count)).first
+    end
   end
 
   # GET /posts/index

@@ -2,18 +2,19 @@
   <title><%= @post.title %></title>
 <% end %>
 
-<p id="notice"><%= notice %></p>
+<% content_for :navigation do %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <%= link_to 'Back', posts_path %>
+<% end %>
 
-<p>
-  <b>Title:</b>
+<div id="notice">
+  <%= notice %>
+</div>
+
+<h1>
   <%= @post.title %>
-</p>
+</h1>
 
-<p>
-  <b>Body:</b>
+<div id=post_body>
   <%= @post.body %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+</div>

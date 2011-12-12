@@ -1,32 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <% content_for :head do %>
-      <title>Posts</title>
-    <% end %>
+<% content_for :head do %>
+  <title>Posts</title>
+<% end %>
 
+<% content_for :navigation do %>
+  <%= link_to "Posts index", posts_path %> |
+  <%= link_to "New post", new_post_path %>
+<% end %>
+
+<h1>
+  otwtraining: Posts homepage
+</h1>
+
+<% if @randomPost %>
+<div id=all_posts>
+  
+  <div id=notice>
+    Featured post:
+  </div>
+  <div id=post_title>
+    <%= @randomPost.title %>
+  </div>
     
-  </head>
-  <body>
-    <div id="page">
-
-      <div id="content">
-        <div id="header">
-          <h1>OTW training</h1>
-          <h2>posts project homepage</h2>
-        </div>        
-        
-    <p><%= link_to "Posts index", posts_path %></p>
-    <p><%= link_to "New post", new_post_path %></p>
-	
-	<% if @randomPost %>	
-		<h3><em>featured post:</em> <%= @randomPost.title %></h3>
-		<%= @randomPost.body %></p>
-	<% end %>    
-        
-      </div>
-      
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
-</html>
+  <div id=post_body>
+    <%= @randomPost.body %>
+  </div>
+</div>
+<% end %>
