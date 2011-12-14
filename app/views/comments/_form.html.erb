@@ -1,0 +1,19 @@
+<div id="comments_reply_form">
+  <%= form_for([@post, @post.comments.build]) do |f| %>
+    <div class="field">
+      <div class="label">
+        <%= f.label :commenter %>
+      </div>
+      <%= f.text_field :commenter %>
+    </div>
+    <div class="field">
+      <div class="label">
+        <%= f.label :body %>
+      </div>
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

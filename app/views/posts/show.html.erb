@@ -18,3 +18,29 @@
 <div id=post_body>
   <%= @post.body %>
 </div>
+
+<a name="comments"></a> 
+<div id=comments_heading class=label>
+  <% if @post.comments.count > 0 %>
+    Comments
+    <hr>
+  <% else %>
+    <hr>
+  <% end %>
+</div>
+
+<% if @post.comments.count > 0 %>
+  <%= render @post.comments %>
+<% end %>
+ 
+<a name="reply"></a>
+<div id=reply_heading>
+  Add a comment:
+</div>
+<%= render "comments/form" %>
+
+<% content_for :footer do %>
+  <% if @post.comments.count > 2 %>
+    <%= link_to "To the top!", :anchor => "" %>
+  <% end %>
+<% end %>

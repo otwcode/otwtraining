@@ -1,0 +1,22 @@
+<div id=comments>
+  <div id=whole_comment>
+  
+    <div id=commenter>
+      <%= comment.commenter %> replied:
+    </div>
+    
+    <div id=comment_body>
+      <%= comment.body %>
+    </div>
+    
+    <div id=comment_actions>
+      <%= link_to 'Delete', [comment.post, comment], 
+        :confirm => 'Are you sure?', :method => :delete %>
+    </div>
+    
+  </div>
+  
+  <hr>
+    
+</div>
+    

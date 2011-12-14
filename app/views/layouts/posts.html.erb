@@ -9,13 +9,19 @@
 
 <body>
 
-<div id="content_wrapper">
+<div id="page">
 
-<div id=navigation>
+  <div id=navigation>
     <%= yield :navigation %>
-</div>
+  </div>
 
-<%= yield %>
+  <div id=content>
+    <%= yield %>
+  </div>
+
+  <div id=footer>
+    <%= yield :footer %>
+  </div>
 
 </div>
 

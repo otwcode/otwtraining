@@ -1,3 +1,5 @@
+<a name=""></a> 
+
 <% content_for :head do %>
   <title>Index</title>
 <% end %>
@@ -10,27 +12,42 @@
 <h1>Listing posts</h1>
 
 <div id=all_posts>
-<% @posts.each do |post| %>
-  <div id=whole_post>
   
-    <div id=post_title>
-      <%= post.title %>
+  <% @posts.each do |post| %>
+    <div id=whole_post>
+    
+      <div id=post_title>
+        <%= post.title %>
+      </div>
+      
+      <div id=post_body>
+        <%= post.body %>
+      </div>
+      
+      <div id=post_actions>    
+        <%= link_to 'Show', post %> | 
+        <%= link_to 'Edit', edit_post_path(post) %> |
+        <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+        
+        <div id=post_actions_comments>
+          <% if post.comments.count > 0 %>
+            <%= link_to (post.comments.count.to_s + " comments"), post_path(:id => post.id, :anchor => "comments") %> |
+          <% end %>
+          <%= link_to 'Reply', post_path(:id => post.id, :anchor => "reply") %>
+        </div>
+        
+      </div>
     </div>
     
-    <div id=post_body>
-      <%= post.body %>
-    </div>
-    
-    <div id=post_actions>    
-      <%= link_to 'Show', post %> | 
-      <%= link_to 'Edit', edit_post_path(post) %> |
-      <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
-    </div>
-  </div>
-  
-  <hr>
-    
-<% end %>
+    <hr>
+      
+  <% end %>
 </div>
 
-<br />
+
+<% content_for :footer do %>
+  <% if @posts.count > 3 %>
+    <%= link_to "To the top!", :anchor => "" %>
+  <% end %>
+<% end %>
+   

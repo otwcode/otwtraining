@@ -1,10 +1,12 @@
 Otwtraining::Application.routes.draw do
 
-  get "/posts" => "posts#home"  
+  get "/posts" => "posts#home", :as => :posts_home
   get "/posts/index" => "posts#index", :as => :posts
   post "/posts/index" => "posts#create", :as => :posts  
   get "/admin/posts/new" => "posts#new", :as => :new_post  
-  resources :posts, :only => [:show, :edit, :update, :destroy]
+  resources :posts, :only => [:show, :edit, :update, :destroy]  do
+    resources :comments
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
