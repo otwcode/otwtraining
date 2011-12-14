@@ -31,7 +31,8 @@
         
         <div id=post_actions_comments>
           <% if post.comments.count > 0 %>
-            <%= link_to (post.comments.count.to_s + " comments"), post_path(:id => post.id, :anchor => "comments") %> |
+            <% suffix = (post.comments.count == 1) ? " comment" : " comments" %>
+            <%= link_to (post.comments.count.to_s + suffix), post_path(:id => post.id, :anchor => "comments") %> |
           <% end %>
           <%= link_to 'Reply', post_path(:id => post.id, :anchor => "reply") %>
         </div>
