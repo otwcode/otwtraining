@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% content_for :head do %>
+      <title>Posts</title>
+    <% end %>
+
+    
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="content">
+        <div id="header">
+          <h1>OTW training</h1>
+          <h2>posts project homepage</h2>
+        </div>        
+        
+    <p><%= link_to "Posts index", posts_path %></p>
+    <p><%= link_to "New post", new_post_path %></p>
+	
+	<% if @randomPost %>	
+		<h3><em>featured post:</em> <%= @randomPost.title %></h3>
+		<%= @randomPost.body %></p>
+	<% end %>    
+        
+      </div>
+      
+      <div id="footer">&nbsp;</div>
+    </div>
+  </body>
+</html>
